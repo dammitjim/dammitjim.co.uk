@@ -1,0 +1,16 @@
+{{ define "jumbotron" }}
+    {{ if isset .Params "image" }}
+        <img src="{{ .Params.image | absURL}}" />
+        {{ if isset .Params "image_credit" }}
+            <div class="image-credit">
+                <span>Image credit: <a href="{{.Params.image_credit}}" target="_blank">{{ .Params.image_credit }}</a></span>
+            </div>
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ define "main" }}
+    <article class="post-body">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </article>
+{{ end }}

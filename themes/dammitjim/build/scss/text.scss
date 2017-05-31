@@ -1,0 +1,51 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    opacity: 0.8;
+
+    small {
+        font-weight: 300;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: grey;
+        }
+    }
+}
+
+a {
+    color: darkgray;
+
+    &:hover {
+    color: grey;
+    }
+}
+
+span {
+    opacity: 0.8;
+}
+
+p {
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    opacity: 0.8;
+    margin: 0;
+    margin-top: 27px;
+    font-family: "Vollkorn", serif;
+}
+
+pre {
+    margin: 0;
+    margin-top: 27px;
+    * {
+        font-family: 'Fira Mono', monospace;
+        line-height: 1.75;
+    }
+}
