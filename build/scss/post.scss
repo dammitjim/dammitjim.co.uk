@@ -1,6 +1,9 @@
 .post.summary {
     border-bottom: 1px solid #cdd4da;
     padding: 20px 0;
+    position: relative;
+    z-index: 1;
+
     h3 {
         margin: 0;
     }
@@ -12,6 +15,13 @@
     .state {
         display: block;
         margin-top: 5px;
+    }
+
+    .github-out {
+        float: right;
+        font-size: 2em;
+        z-index: 2;
+        position: relative;
     }
 }
 

@@ -4,6 +4,7 @@ github = "https://github.com/jimah/cast_condenser"
 status = "Discontinued"
 tags = ["project"]
 title = "Casts"
+language = "Golang"
 
 +++
 Leverage the iTunes search API to get podcast information, distill it and prepare it for storage.

@@ -4,6 +4,7 @@ github = "https://github.com/jimah/atom-panels"
 status = "Active"
 tags = ["project"]
 title = "Atom-Panels"
+language = "Javascript"
 
 +++
 Package for handling pane splitting in Atom, ~600 downloads on APM.
