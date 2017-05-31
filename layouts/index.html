@@ -8,17 +8,18 @@
     </div>
     <div class="block">
         <div class="blocktag"><span>Who am I?</span></div>
-        <p>
-            Hello! I'm a Web Developer or Software Engineer depending on who you ask. I've worked professionally as a programmer for three years, using
-            a variety of tools and languages across that time.
-        </p>
-        <p>
-            <a href="/about">Read a bit more about me</a>
-        </p>
+        {{ range .Site.RegularPages }}
+            {{ if eq .Title "about" }}
+                <p>{{ .Summary }}</p>
+                <p>
+                    <a href="/about">Read more</a>
+                </p>
+            {{ end }}
+        {{ end }}
     </div>
     <div class="block">
         <div class="blocktag"><span>Projects</span></div>
-        {{ range (where .Data.Pages "Type" "project") }}
+        {{ range (where .Pages "Type" "project") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>

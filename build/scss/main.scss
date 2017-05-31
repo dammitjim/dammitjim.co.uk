@@ -31,12 +31,12 @@ body {
 
     .blocktag {
         border-bottom: 1px solid $icon-bg;
-        text-align: right;
         padding-bottom: 20px;
         width: 100%;
 
         span {
-            color: $subtle;
+            color: black;
+            font-size: 1.75em;
         }
     }
 }
