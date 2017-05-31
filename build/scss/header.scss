@@ -1,6 +1,15 @@
 nav.header {
     width: 100%;
 
+    .home-nav {
+        float: left;
+
+        a {
+            margin: 10px;
+            padding: 10px;
+        }
+    }
+
     ul {
         text-align: right;
         list-style: none;

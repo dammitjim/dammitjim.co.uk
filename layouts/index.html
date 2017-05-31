@@ -7,12 +7,15 @@
         <h2>Jim Hill <small>Developer</small></h2>
     </div>
     <div class="block">
-        <div class="blocktag"><span>Words</span></div>
+        <div class="blocktag"><span>Words I've Written</span></div>
         {{ range first 2 (where .Data.Pages "Type" "blog") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>
     <div class="block">
-        <div class="blocktag"><span>Code</span></div>
+        <div class="blocktag"><span>Projects I'm Working On</span></div>
+        {{ range (where .Data.Pages "Type" "project") }}
+            {{ .Render "summary" }}
+        {{ end }}
     </div>
 {{ end }}
