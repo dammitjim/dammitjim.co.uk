@@ -3,6 +3,7 @@ date = "2016-04-09T17:56:31+01:00"
 draft = true
 tags = ["blog"]
 title = "The Walking Dead Finale Rant"
+image = "img/walking-dead-negan.jpg"
 
 +++
 

@@ -1,4 +1,13 @@
-.post {
+.post.summary {
+    border-bottom: 1px solid #cdd4da;
+    padding: 20px 0;
+    h3 {
+        margin: 0;
+    }
+
+    h4 {
+        margin: 0;
+    }
 }
 
 .image-credit {

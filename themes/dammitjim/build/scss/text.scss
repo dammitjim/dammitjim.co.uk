@@ -27,21 +27,37 @@ a {
     }
 }
 
+h1 {
+    font-size: 3.157em;
+}
+
+h2 {
+    font-size: 2.369em;
+}
+
+h3 {
+    font-size: 1.777em;
+}
+
+h4 {
+    font-size: 1.333em;
+}
+
 span {
     opacity: 0.8;
 }
 
 p {
-    font-size: 21px;
+    font-size: 1em;
     line-height: 1.58;
     letter-spacing: -.003em;
     opacity: 0.8;
     margin: 0;
     margin-top: 27px;
-    font-family: "Vollkorn", serif;
+    font-family: "Merriweather", serif;
 
     * {
-        font-family: "Vollkorn", serif;
+        font-family: "Merriweather", serif;
     }
 }
 

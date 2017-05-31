@@ -1,15 +1,15 @@
 {{ define "main" }}
     <div class="masthead">
         <img src="https://avatars2.githubusercontent.com/u/1707411?v=3&s=460"/>
-        <h1>Jim Hill <small>Developer</small></h1>
+        <h2>Jim Hill <small>Developer</small></h2>
     </div>
     <div class="block">
-        <div class="blocktag"><span>Blog</span></div>
+        <div class="blocktag"><span>Words</span></div>
         {{ range first 2 (where .Data.Pages "Type" "blog") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>
     <div class="block">
-        <div class="blocktag"><span>Projects</span></div>
+        <div class="blocktag"><span>Code</span></div>
     </div>
 {{ end }}
