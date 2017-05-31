@@ -1,8 +1,7 @@
 <nav class="header">
     <div class="nav-left">
-        IsHome: {{ .IsHome }}
-        {{ if .IsHome }}
-            <p>hey</p>
+        {{ block "header-nav-left" . }}
+            <a href="/" class="home-nav">Jim Hill</a>
         {{ end }}
     </div>
     <div class="nav-right">
