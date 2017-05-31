@@ -44,19 +44,26 @@ span {
     opacity: 0.8;
 }
 
-p {
+p, li{
+    font-family: "Merriweather", serif;
     color: $text;
     font-size: 1em;
-    line-height: 1.7em;
     letter-spacing: -.003em;
+    line-height: 1.75em;
     opacity: 0.8;
-    margin: 0;
-    margin-top: 27px;
-    font-family: "Merriweather", serif;
 
     * {
         font-family: "Merriweather", serif;
     }
+}
+
+p {
+    margin: 0;
+    margin-top: 27px;
+}
+
+li a {
+    color: $hyperlink;
 }
 
 pre {
