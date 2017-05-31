@@ -1,3 +1,4 @@
+@import "./vars.scss";
 @import "./text.scss";
 @import "./header.scss";
 @import "./post.scss";
@@ -29,13 +30,13 @@ body {
     position: relative;
 
     .blocktag {
-        border-bottom: 1px solid #cdd4da;
+        border-bottom: 1px solid $icon-bg;
         text-align: right;
         padding-bottom: 20px;
         width: 100%;
 
         span {
-            color: grey;
+            color: $subtle;
         }
     }
 }
@@ -57,8 +58,8 @@ ul.social-icons {
 
     i {
         padding: 5px;
-        background-color: #cdd4da;
-        color: white;
+        background-color: $icon-bg;
+        color: $icon-color;
         vertical-align: middle;
         text-align: center;
         line-height: 20px;
@@ -68,7 +69,7 @@ ul.social-icons {
         height: 22px;
 
         &:hover {
-            background-color: darken(#cdd4da, 20%);
+            background-color: darken($icon-bg, 20%);
         }
     }
 }
