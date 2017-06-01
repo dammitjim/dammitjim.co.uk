@@ -1,0 +1,8 @@
+{{ define "main" }}
+    <div class="block">
+        <div class="blocktag"><span>Blog</span></div>
+        {{ range (where .Data.Pages "Type" "blog") }}
+            {{ .Render "summary" }}
+        {{ end }}
+    </div>
+{{ end }}

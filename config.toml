@@ -1,3 +1,22 @@
 baseURL = "http://example.org/"
 languageCode = "en-gb"
 title = "Dammit, Jim!"
+SectionPagesMenu = "main"
+
+[[menu.main]]
+    name = "Blog"
+    weight = -110
+    identifier = "blog"
+    url = "/blog/"
+
+[[menu.main]]
+    name = "About"
+    weight = -120
+    identifier = "about"
+    url = "/about/"
+
+[[menu.main]]
+    name = "Home"
+    weight = -130
+    identifier = "index"
+    url = "/"

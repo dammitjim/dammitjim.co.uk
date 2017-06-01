@@ -19,7 +19,7 @@
     </div>
     <div class="block">
         <div class="blocktag"><span>Projects</span></div>
-        {{ range (where .Pages "Type" "project") }}
+        {{ range first 4 (where .Pages "Type" "project") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>

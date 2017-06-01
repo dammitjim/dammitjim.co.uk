@@ -4,19 +4,15 @@
     {{ partial "head.html" }}
 </head>
 <body>
+    <nav class="sidebar-nav">
+    </nav>
     <nav class="header">
-        <div class="nav-left">
-            {{ block "header-nav-left" . }}
-                <div class="home-nav">
-                    <a href="/">Jim Hill</a>
-                </div>
-            {{ end }}
-        </div>
         <div class="nav-right">
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Projects</a></li>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    <li><a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a></li>
+                {{ end }}
             </ul>
         </div>
     </nav>

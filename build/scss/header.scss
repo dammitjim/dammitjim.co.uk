@@ -17,10 +17,15 @@ nav.header {
 
         li {
             display: inline-block;
+
             a {
                 display: block;
                 padding: 10px;
                 margin: 0 5px;
+                &.active {
+                    background: $text;
+                    color: white;
+                }
             }
         }
     }
