@@ -17,7 +17,6 @@ body {
     @include breakpoint() {
         box-sizing: border-box;
         max-width: 100%;
-        padding: 60px 20px 100px 20px;
     }
 }
 
