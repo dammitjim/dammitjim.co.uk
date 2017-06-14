@@ -19,14 +19,14 @@
         {{ end }}
     </div>
     <div class="block">
-        <div class="blocktag"><h3>Projects</h3></div>
-        {{ range first 4 (where .Pages "Type" "project") }}
+        <div class="blocktag"><h3>Blog</h3></div>
+        {{ range first 2 (where .Data.Pages "Type" "blog") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>
     <div class="block">
-        <div class="blocktag"><h3>Blog</h3></div>
-        {{ range first 2 (where .Data.Pages "Type" "blog") }}
+        <div class="blocktag"><h3>Projects</h3></div>
+        {{ range first 4 (where .Pages "Type" "project") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>
