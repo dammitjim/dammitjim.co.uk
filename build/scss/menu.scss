@@ -26,6 +26,10 @@
             display: none;
         }
 
+        .menu-social-icons {
+            display: none;
+        }
+
         a.icon {
             float: right;
             display: block;
@@ -45,6 +49,27 @@
                     top: 0;
                 }
             }
+
+            .menu-social-icons {
+                display: block;
+                float: none;
+                width: 100%;
+                border-top: 1px solid lighten(#333, 20%);
+                margin-top: 10px;
+
+                a {
+                    float: left;
+                    box-sizing: border-box;
+                    width: 16.6666666667%;
+                    font-size: 20px;
+                    padding: 20px 0;
+                    text-align: center;
+                }
+            }
         }
     }
+}
+
+.menu-social-icons {
+    float: right;
 }
