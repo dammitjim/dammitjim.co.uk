@@ -32,7 +32,7 @@ SELECT * FROM people WHERE id IN (1, 2, 7);
 Once again, it appears to be a simple statement, I believed this to translate into golang as follows:
 
 ```go
-rows, err := db.Queryx(“SELECT * FROM people WHERE id IN ($1)”, ids)
+rows, err := db.Queryx("SELECT * FROM people WHERE id IN ($1)", ids)
 ```
 
 Where ids is a slice of integers, however upon running the program I received this lovely error message:
@@ -50,7 +50,8 @@ Further investigation revealed that this is an [ongoing issue](https://github.co
 My first horrible, hacky solution was to spoof the input array using a joined array of strings:
 
 ```go
-db.Queryx(“SELECT * FROM people WHERE id IN ($1)”, strings.Join(ids, “, “))
+rows, err := db.Queryx(
+	"SELECT * FROM people WHERE id IN ($1)", strings.Join(ids, ", "))
 ```
 
 However this proved to be a fools errand as it was being interpreted as a string input, rather than sequential integers.
@@ -70,7 +71,7 @@ type Int64Array []int64
 
 // Value returns the driver compatible value
 func (a Int64Array) Value() (driver.Value, error) {
-	var strs []string
+	strs := make([]string, len(a))
 	for _, i := range a {
 		strs = append(strs, strconv.FormatInt(i, 10))
 	}
@@ -81,7 +82,8 @@ func (a Int64Array) Value() (driver.Value, error) {
 Here we create a new type of `Int64Array` and make it conform to the [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interface, allowing us to pass it through to a `db.Queryx()` function call as it evaluates our variable as a Valuer which does not need to be converted. Our Go function call then becomes:
 
 ```go
-rows, err := db.Queryx(“SELECT * FROM people WHERE id = ANY ($1)”, int64IDs)
+rows, err := db.Queryx(
+	"SELECT * FROM people WHERE id = ANY ($1)", int64IDs)
 ```
 
 End result: it worked. Hooray!
