@@ -9,7 +9,7 @@
             <div class="menu" id="main-menu">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
-                    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+                    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{.URL | absURL}}">{{ .Name }}</a>
                 {{ end }}
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
                 <div class="menu-social-icons">
