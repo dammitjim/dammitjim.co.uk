@@ -11,7 +11,7 @@
 {{ define "main" }}
     <article class="post summary">
         <header>
-            <h3><a href='{{ .Permalink }}'> {{ .Title }}</a></h3><h4><small>{{ .FuzzyWordCount }} Words | {{ .Date.Format "Mon, Jan 2, 2006" }}</small></h4>
+            <h3>{{ .Title }}</h3><h4><small>{{ .FuzzyWordCount }} Words | {{ .Date.Format "Mon, Jan 2, 2006" }}</small></h4>
         </header>
     </article>
     <article class="post-body">

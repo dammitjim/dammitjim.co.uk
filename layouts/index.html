@@ -7,7 +7,7 @@
         <h2>Jim Hill <small>Developer</small></h2>
     </div>
     <div class="block">
-        <div class="blocktag"><span>Who am I?</span></div>
+        <div class="blocktag"><h3>Who am I?</h3></div>
         {{ range .Site.RegularPages }}
             {{ if eq .Title "about" }}
                 <p>{{ .Summary }}</p>
@@ -18,13 +18,13 @@
         {{ end }}
     </div>
     <div class="block">
-        <div class="blocktag"><span>Projects</span></div>
+        <div class="blocktag"><h3>Projects</h3></div>
         {{ range first 4 (where .Pages "Type" "project") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>
     <div class="block">
-        <div class="blocktag"><span>Blog</span></div>
+        <div class="blocktag"><h3>Blog</h3></div>
         {{ range first 2 (where .Data.Pages "Type" "blog") }}
             {{ .Render "summary" }}
         {{ end }}

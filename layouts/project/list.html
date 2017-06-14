@@ -1,6 +1,6 @@
 {{ define "main" }}
     <div class="block">
-        <div class="blocktag"><span>Projects</span></div>
+        <div class="blocktag"><h3>Projects</h3></div>
         {{ range (where .Pages "Type" "project") }}
             {{ .Render "summary" }}
         {{ end }}
