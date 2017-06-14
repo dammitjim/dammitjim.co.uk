@@ -1,7 +1,7 @@
 +++
 date = "2017-05-31T22:53:38+01:00"
 github = "https://github.com/jimah/atom-panels"
-status = "Active"
+status = "Active-ish"
 tags = ["project"]
 title = "Atom-Panels"
 language = "Javascript"
