@@ -1,7 +1,7 @@
 +++
 date = "2017-05-31T23:59:57+01:00"
 title = "about"
-blocktitle = "Who am I?"
+blocktitle = "A little bit about me"
 [menu.main]
     identifier = "about"
 

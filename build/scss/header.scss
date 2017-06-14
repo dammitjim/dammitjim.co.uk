@@ -1,6 +1,12 @@
 nav.header {
     width: 100%;
 
+    @include breakpoint() {
+        width: 327px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
     .home-nav {
         float: left;
 
@@ -14,6 +20,11 @@ nav.header {
         text-align: right;
         list-style: none;
         margin: 10px;
+
+        @include breakpoint() {
+            margin: 10px 0;
+            padding: 0;
+        }
 
         li {
             display: inline-block;
