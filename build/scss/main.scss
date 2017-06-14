@@ -19,16 +19,32 @@ body {
         box-sizing: border-box;
         max-width: 100%;
     }
+
+    @include super-small-breakpoint() {
+        padding: 20px;
+        padding-top: 0;
+    }
 }
 
 .masthead {
     padding: 60px 40px 10px;
     text-align: center;
 
+    @include breakpoint() {
+    }
+
+    @include super-small-breakpoint() {
+        padding: 0;
+        text-align: left;
+    }
+
     img {
         border-radius: 50%;
         width: 100px;
         height: auto;
+        @include super-small-breakpoint() {
+            display: none;
+        }
     }
 }
 

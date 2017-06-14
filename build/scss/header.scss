@@ -7,6 +7,11 @@ nav.header {
         text-align: center;
     }
 
+    @include super-small-breakpoint() {
+        text-align: left;
+        width: 100%;
+    }
+
     .home-nav {
         float: left;
 
@@ -23,7 +28,11 @@ nav.header {
 
         @include breakpoint() {
             margin: 10px 0;
-            padding: 0;
+            padding: 10px;
+        }
+
+        @include super-small-breakpoint() {
+            text-align: left;
         }
 
         li {

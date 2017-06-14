@@ -1,3 +1,7 @@
 @mixin breakpoint() {
     @media (max-width: 1024px) { @content; }
 }
+
+@mixin super-small-breakpoint() {
+    @media (max-width: 520px) { @content; }
+}
