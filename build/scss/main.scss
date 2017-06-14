@@ -30,20 +30,22 @@ body {
     padding: 60px 40px 10px;
     text-align: center;
 
-    @include breakpoint() {
-    }
-
-    @include super-small-breakpoint() {
-        padding: 0;
-        text-align: left;
-    }
-
     img {
         border-radius: 50%;
         width: 100px;
         height: auto;
         @include super-small-breakpoint() {
-            display: none;
+            // display: none;
+        }
+    }
+
+    @include breakpoint() {
+        padding: 60px 40px 30px;
+    }
+
+    @include super-small-breakpoint() {
+        h2 small {
+            display: block;
         }
     }
 }

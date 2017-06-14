@@ -2,14 +2,9 @@ nav.header {
     width: 100%;
 
     @include breakpoint() {
-        width: 327px;
+        width: 346px;
         margin: 0 auto;
         text-align: center;
-    }
-
-    @include super-small-breakpoint() {
-        text-align: left;
-        width: 100%;
     }
 
     .home-nav {
@@ -25,14 +20,15 @@ nav.header {
         text-align: right;
         list-style: none;
         margin: 10px;
+        padding: 0;
 
         @include breakpoint() {
-            margin: 10px 0;
-            padding: 10px;
+            margin: 10px;
         }
 
         @include super-small-breakpoint() {
             text-align: left;
+            padding: 10px;
         }
 
         li {
@@ -45,6 +41,9 @@ nav.header {
                 &.active {
                     background: $text;
                     color: white;
+                }
+                @include super-small-breakpoint() {
+                    margin: 0;
                 }
             }
         }
