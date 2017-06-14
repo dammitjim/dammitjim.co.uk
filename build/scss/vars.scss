@@ -1,7 +1,7 @@
 $popper: blue;
 $text: rgba(0,0,0,0.9);
-$hyperlink: $text;
-$hyperlink-hover: black;
+$hyperlink: #02779E;
+$hyperlink-hover: darken($hyperlink, 10%);
 $subtle: grey;
 $icon-bg: #cdd4da;
 $icon-color: white;
