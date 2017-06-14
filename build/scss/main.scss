@@ -14,9 +14,9 @@ body {
     margin: 0 auto;
     padding: 60px 40px 100px 40px;
 
-    @include breakpoint(sm) {
+    @include breakpoint() {
         box-sizing: border-box;
-        width: 100%;
+        max-width: 100%;
         padding: 60px 20px 100px 20px;
     }
 }
