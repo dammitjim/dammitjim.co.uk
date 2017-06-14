@@ -1,4 +1,5 @@
 @import "./vars.scss";
+@import "./breakpoints.scss";
 @import "./text.scss";
 @import "./header.scss";
 @import "./post.scss";
@@ -12,6 +13,12 @@ body {
     max-width: 600px;
     margin: 0 auto;
     padding: 60px 40px 100px 40px;
+
+    @include breakpoint(sm) {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 60px 20px 100px 20px;
+    }
 }
 
 .masthead {
