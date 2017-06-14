@@ -3,6 +3,10 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
+    @include breakpoint() {
+        -webkit-text-size-adjust: none;
+    }
+
     opacity: 0.8;
 
     small {
