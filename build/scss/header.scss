@@ -1,12 +1,6 @@
 nav.header {
     width: 100%;
 
-    @include breakpoint() {
-        width: 346px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
     .home-nav {
         float: left;
 

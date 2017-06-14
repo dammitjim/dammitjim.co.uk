@@ -1,6 +1,7 @@
 @import "./vars.scss";
 @import "./breakpoints.scss";
 @import "./text.scss";
+@import "./menu.scss";
 @import "./header.scss";
 @import "./post.scss";
 
@@ -34,9 +35,6 @@ body {
         border-radius: 50%;
         width: 100px;
         height: auto;
-        @include super-small-breakpoint() {
-            // display: none;
-        }
     }
 
     @include breakpoint() {
