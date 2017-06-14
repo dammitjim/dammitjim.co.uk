@@ -1,4 +1,4 @@
-baseURL = "https://dammitjim.co.uk/"
+baseURL = "http://dammitjim.co.uk/"
 languageCode = "en-gb"
 title = "Dammit, Jim!"
 SectionPagesMenu = "main"
