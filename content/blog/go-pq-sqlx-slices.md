@@ -71,7 +71,7 @@ type Int64Array []int64
 
 // Value returns the driver compatible value
 func (a Int64Array) Value() (driver.Value, error) {
-	strs := make([]string, len(a))
+	var strs []string
 	for _, i := range a {
 		strs = append(strs, strconv.FormatInt(i, 10))
 	}
