@@ -10,7 +10,7 @@
     <div class="block">
         <div class="blocktag"><h3>Who am I?</h3></div>
         {{ range .Site.RegularPages }}
-            {{ if eq .Title "about" }}
+            {{ if eq .Title "About" }}
                 <p>{{ .Summary }}</p>
                 <p>
                     <a href="/about">Read more</a>
@@ -20,7 +20,7 @@
     </div>
     <div class="block">
         <div class="blocktag"><h3>Blog</h3></div>
-        {{ range first 2 (where .Data.Pages "Type" "blog") }}
+        {{ range first 4 (where .Data.Pages "Type" "blog") }}
             {{ .Render "summary" }}
         {{ end }}
     </div>

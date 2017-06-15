@@ -1,3 +1,6 @@
+{{ define "title" }}
+    {{ .Params.title }} - Jim Hill
+{{ end }}
 {{ define "jumbotron" }}
     {{ if isset .Params "image" }}
         <img src="{{ .Params.image | absURL}}" />
