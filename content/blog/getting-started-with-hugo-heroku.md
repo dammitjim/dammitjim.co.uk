@@ -34,5 +34,3 @@ You can download the lastest release of Hugo for your architecture from [Github]
 ```bash
 brew install hugo
 ```
-
-Once installed, I highly recommend that you read through the basic tutorial located here: 
