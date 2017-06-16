@@ -7,4 +7,4 @@ language = "Python"
 weight = 1
 
 +++
-Web crawler that scrapes down whiskey information to be normalised into a RESTful API. Very early days but it would be cool if I could build something similar to the [pokemon api](https://pokeapi.co/).
+Web crawler that scrapes down whisky information to be normalised into a RESTful API. Very early days but it would be cool if I could build something similar to the [pokemon api](https://pokeapi.co/).
