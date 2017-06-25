@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://46.101.56.83/project/distillery/</loc>
+    <lastmod>2017-05-31T22:53:39+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/project/atom-panels/</loc>
+    <lastmod>2017-05-31T22:53:38+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/project/dammitjim/</loc>
+    <lastmod>2017-05-28T23:16:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/project/lobby/</loc>
+    <lastmod>2017-06-16T11:53:53+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/project/casts/</loc>
+    <lastmod>2017-05-20T22:51:07+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/about/</loc>
+    <lastmod>2017-05-31T23:59:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/blog/go-pq-sqlx-slices/</loc>
+    <lastmod>2016-04-04T16:57:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/tags/blog/</loc>
+    <lastmod>2016-04-04T16:57:51+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/blog/</loc>
+    <lastmod>2016-04-04T16:57:51+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/</loc>
+    <lastmod>2017-05-31T22:53:39+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/tags/project/</loc>
+    <lastmod>2017-05-31T22:53:38+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/project/</loc>
+    <lastmod>2017-05-31T22:53:39+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://46.101.56.83/tags/</loc>
+    <lastmod>2016-04-04T16:57:51+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

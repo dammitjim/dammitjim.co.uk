@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Dammit, Jim!</title>
+    <link>http://46.101.56.83/project/</link>
+    <description>Recent content in Projects on Dammit, Jim!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 31 May 2017 22:53:39 +0100</lastBuildDate>
+    
+	<atom:link href="http://46.101.56.83/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Distillery</title>
+      <link>http://46.101.56.83/project/distillery/</link>
+      <pubDate>Wed, 31 May 2017 22:53:39 +0100</pubDate>
+      
+      <guid>http://46.101.56.83/project/distillery/</guid>
+      <description>Web crawler that scrapes down whisky information to be normalised into a RESTful API. Very early days but it would be cool if I could build something similar to the pokemon api.</description>
+    </item>
+    
+    <item>
+      <title>Atom-Panels</title>
+      <link>http://46.101.56.83/project/atom-panels/</link>
+      <pubDate>Wed, 31 May 2017 22:53:38 +0100</pubDate>
+      
+      <guid>http://46.101.56.83/project/atom-panels/</guid>
+      <description>Package for handling pane splitting in Atom, ~600 downloads on APM.</description>
+    </item>
+    
+    <item>
+      <title>dammitjim.co.uk</title>
+      <link>http://46.101.56.83/project/dammitjim/</link>
+      <pubDate>Sun, 28 May 2017 23:16:58 +0100</pubDate>
+      
+      <guid>http://46.101.56.83/project/dammitjim/</guid>
+      <description>This site! Built with the Hugo static site generator.</description>
+    </item>
+    
+    <item>
+      <title>Lobby</title>
+      <link>http://46.101.56.83/project/lobby/</link>
+      <pubDate>Fri, 16 Jun 2017 11:53:53 +0100</pubDate>
+      
+      <guid>http://46.101.56.83/project/lobby/</guid>
+      <description>A Twitch stream browser for the desktop!
+This project was used to learn electron and was built using React / Redux, it was a lot of fun and I would one day like to return to it.
+Used a golang microservice as a middleman to authenticate and cache twitch request / responses.</description>
+    </item>
+    
+    <item>
+      <title>Casts</title>
+      <link>http://46.101.56.83/project/casts/</link>
+      <pubDate>Sat, 20 May 2017 22:51:07 +0100</pubDate>
+      
+      <guid>http://46.101.56.83/project/casts/</guid>
+      <description>Leverage the iTunes search API to get podcast information, concurrently normalise the returned data and prepare it for storage in a seperate service API.
+Originally built for an RSS scraping project I was working on.</description>
+    </item>
+    
+  </channel>
+</rss>

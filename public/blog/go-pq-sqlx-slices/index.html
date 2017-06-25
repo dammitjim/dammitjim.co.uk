@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    Using slices with Go’s pq and SQLx libraries. - Jim Hill
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://46.101.56.83/css/main.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Fira+Mono|Merriweather:400,400i" rel="stylesheet">
+<link rel="stylesheet" href="http://46.101.56.83/css/github-gist.css">
+<script src="http://46.101.56.83/js/header.js"></script>
+<script src="http://46.101.56.83/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101015512-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+    <nav class="header">
+        <div class="nav-right">
+            <div class="menu" id="main-menu">
+                
+                
+                    <a class="sidebar-nav-item" href="http://46.101.56.83/">Home</a>
+                
+                    <a class="sidebar-nav-item" href="http://46.101.56.83/about/">About</a>
+                
+                    <a class="sidebar-nav-item active" href="http://46.101.56.83/blog/">Blog</a>
+                
+                    <a class="sidebar-nav-item" href="http://46.101.56.83/project/">Projects</a>
+                
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+                <div class="menu-social-icons">
+                    <a href="https://github.com/jimah" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/thisisjimah" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://medium.com/@thisisjimhill" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/jamesahill0/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/jim-hill" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="mailto:jim@dammitjim.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        
+    
+        <img src="http://46.101.56.83/img/Go_plus_SQL.png" />
+        
+            <div class="image-credit">
+                <span>Image credit: <a href="https://www.calhoun.io/using-postgresql-with-golang/" target="_blank">https://www.calhoun.io/using-postgresql-with-golang/</a></span>
+            </div>
+        
+    
+
+    </div>
+    <div class="container">
+        
+    <article class="post summary">
+        <header>
+            <h3>Using slices with Go’s pq and SQLx libraries.</h3><h4><small>700 Words | Mon, Apr 4, 2016</small></h4>
+        </header>
+    </article>
+    <article class="post-body">
+        <p>I ran into an interesting problem today when developing a data retrieval service for work.</p>
+
+<p>Take the following Postgres SQL statement:</p>
+
+<pre><code class="language-sql">SELECT * FROM people WHERE id = 1;
+</code></pre>
+
+<p>It’s about as simple as it gets, retrieve rows from the <code>people</code>  where the person’s identifier is equal to one. This translates into a golang equivalent of:</p>
+
+<pre><code class="language-go">rows, err := db.Queryx(&quot;SELECT * FROM people WHERE id = $1&quot;, id)
+</code></pre>
+
+<p>(Using sqlx)</p>
+
+<p>However, what if we need to expand the id matches? The statement would change to:</p>
+
+<pre><code class="language-sql">SELECT * FROM people WHERE id IN (1, 2, 7);
+</code></pre>
+
+<p>Once again, it appears to be a simple statement, I believed this to translate into golang as follows:</p>
+
+<pre><code class="language-go">rows, err := db.Queryx(&quot;SELECT * FROM people WHERE id IN ($1)&quot;, ids)
+</code></pre>
+
+<p>Where ids is a slice of integers, however upon running the program I received this lovely error message:</p>
+
+<pre><code class="language-bash">converting Exec argument #0's type: unsupported type []int, a slice
+</code></pre>
+
+<p>That’s a worrying one, unsupported type of slice? It seemed like fairly basic functionality to include in a sql library. Upon further investigation I found that the driver I was using (<a href="https://github.com/lib/pq">pq</a>) utilised Go’s database/sql default <a href="https://golang.org/pkg/database/sql/driver/#pkg-variables">ValueConverter</a> to understand the parameters. Unfortunately it has no ability whatsoever to handle slices!</p>
+
+<p>Ruh roh.</p>
+
+<p>Further investigation revealed that this is an <a href="https://github.com/jmoiron/sqlx/issues/106">ongoing issue</a> in the Go database driver world.</p>
+
+<p>My first horrible, hacky solution was to spoof the input array using a joined array of strings:</p>
+
+<pre><code class="language-go">rows, err := db.Queryx(
+	&quot;SELECT * FROM people WHERE id IN ($1)&quot;, strings.Join(ids, &quot;, &quot;))
+</code></pre>
+
+<p>However this proved to be a fools errand as it was being interpreted as a string input, rather than sequential integers.</p>
+
+<p>”1, 2, 7” instead of 1, 2, 7: indicating it was interpreting as a string.</p>
+
+<p>That pesky typing! This was going to require a bit more elbow grease.</p>
+
+<p>Postgres allows for an <a href="http://www.postgresql.org/docs/9.1/static/arrays.html">Array Value Input</a> to be passed in to expressions using the <code>ANY</code> function comparison. To a noob like me this appeared to just be a formatted string, ding ding. This alone would not do though, as if we passed in a string it would, as before, interpret it as one. Therefore we have to go a step further and implement the <a href="https://golang.org/pkg/database/sql/driver/#Valuer">Valuer</a> interface, which is what the ValueConverter (the part that interprets it as a string) spits out, skipping the middleman.</p>
+
+<p>The solution was as follows:</p>
+
+<pre><code class="language-go">// Int64Array is a type implementing the sql/driver/value interface
+// This is due to the native driver not supporting arrays...
+type Int64Array []int64
+
+// Value returns the driver compatible value
+func (a Int64Array) Value() (driver.Value, error) {
+	var strs []string
+	for _, i := range a {
+		strs = append(strs, strconv.FormatInt(i, 10))
+	}
+	return &quot;{&quot; + strings.Join(strs, &quot;,&quot;) + &quot;}&quot;, nil
+}
+</code></pre>
+
+<p>Here we create a new type of <code>Int64Array</code> and make it conform to the <a href="https://golang.org/pkg/database/sql/driver/#Valuer">Valuer</a> interface, allowing us to pass it through to a <code>db.Queryx()</code> function call as it evaluates our variable as a Valuer which does not need to be converted. Our Go function call then becomes:</p>
+
+<pre><code class="language-go">rows, err := db.Queryx(
+	&quot;SELECT * FROM people WHERE id = ANY ($1)&quot;, int64IDs)
+</code></pre>
+
+<p>End result: it worked. Hooray!</p>
+
+<p>Reading into the unsupported slice issue further I found that slices are not natively supported in order to improve
+cross-driver support (due to the large syntactic differences between database query engines). It makes sense, but is a bit disappointing.
+Go is ultimately a young language in the grand scheme of things so problems like this do happen. However the strength of the interface system has meant that so far I haven’t experienced anything that I’ve been outright unable to solve.</p>
+
+<p>Thank you for reading, I hope it has helped if you are currently encountering this problem.</p>
+    </article>
+
+        
+            <footer class="base">
+    <ul class="social-icons">
+        <li>
+            <a href="https://github.com/jimah" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a href="https://twitter.com/thisisjimah" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a href="https://medium.com/@thisisjimhill" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/jamesahill0/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/jim-hill" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </li>
+        <li>
+            <a href="mailto:jim@dammitjim.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+</footer>
+        
+    </div>
+</body>
+</html>
