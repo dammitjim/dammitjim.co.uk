@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Dammit, Jim!</title>
-    <link>https://www.dammitjim.co.uk/tags/</link>
+    <link>https://dammitjim.co.uk/tags/</link>
     <description>Recent content in Tags on Dammit, Jim!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Mon, 04 Apr 2016 16:57:51 +0100</lastBuildDate>
     
-	<atom:link href="https://www.dammitjim.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dammitjim.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blog</title>
-      <link>https://www.dammitjim.co.uk/tags/blog/</link>
+      <link>https://dammitjim.co.uk/tags/blog/</link>
       <pubDate>Mon, 04 Apr 2016 16:57:51 +0100</pubDate>
       
-      <guid>https://www.dammitjim.co.uk/tags/blog/</guid>
+      <guid>https://dammitjim.co.uk/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project</title>
-      <link>https://www.dammitjim.co.uk/tags/project/</link>
+      <link>https://dammitjim.co.uk/tags/project/</link>
       <pubDate>Wed, 31 May 2017 22:53:38 +0100</pubDate>
       
-      <guid>https://www.dammitjim.co.uk/tags/project/</guid>
+      <guid>https://dammitjim.co.uk/tags/project/</guid>
       <description></description>
     </item>
     

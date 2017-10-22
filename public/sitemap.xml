@@ -3,77 +3,77 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.dammitjim.co.uk/project/distillery/</loc>
+    <loc>https://dammitjim.co.uk/project/distillery/</loc>
     <lastmod>2017-05-31T22:53:39+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/project/atom-panels/</loc>
+    <loc>https://dammitjim.co.uk/project/atom-panels/</loc>
     <lastmod>2017-05-31T22:53:38+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/project/dammitjim/</loc>
+    <loc>https://dammitjim.co.uk/project/dammitjim/</loc>
     <lastmod>2017-05-28T23:16:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/project/lobby/</loc>
+    <loc>https://dammitjim.co.uk/project/lobby/</loc>
     <lastmod>2017-06-16T11:53:53+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/project/casts/</loc>
+    <loc>https://dammitjim.co.uk/project/casts/</loc>
     <lastmod>2017-05-20T22:51:07+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/about/</loc>
+    <loc>https://dammitjim.co.uk/about/</loc>
     <lastmod>2017-05-31T23:59:57+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/blog/go-pq-sqlx-slices/</loc>
+    <loc>https://dammitjim.co.uk/blog/go-pq-sqlx-slices/</loc>
     <lastmod>2016-04-04T16:57:51+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/tags/blog/</loc>
-    <lastmod>2016-04-04T16:57:51+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.dammitjim.co.uk/blog/</loc>
+    <loc>https://dammitjim.co.uk/tags/blog/</loc>
     <lastmod>2016-04-04T16:57:51+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/categories/</loc>
+    <loc>https://dammitjim.co.uk/blog/</loc>
+    <lastmod>2016-04-04T16:57:51+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/</loc>
+    <loc>https://dammitjim.co.uk/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dammitjim.co.uk/</loc>
     <lastmod>2017-05-31T22:53:39+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/tags/project/</loc>
+    <loc>https://dammitjim.co.uk/tags/project/</loc>
     <lastmod>2017-05-31T22:53:38+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/project/</loc>
+    <loc>https://dammitjim.co.uk/project/</loc>
     <lastmod>2017-05-31T22:53:39+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.dammitjim.co.uk/tags/</loc>
+    <loc>https://dammitjim.co.uk/tags/</loc>
     <lastmod>2016-04-04T16:57:51+01:00</lastmod>
     <priority>0</priority>
   </url>

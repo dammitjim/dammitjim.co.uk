@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Dammit, Jim!</title>
-    <link>https://www.dammitjim.co.uk/tags/blog/</link>
+    <link>https://dammitjim.co.uk/tags/blog/</link>
     <description>Recent content in Blog on Dammit, Jim!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Mon, 04 Apr 2016 16:57:51 +0100</lastBuildDate>
     
-	<atom:link href="https://www.dammitjim.co.uk/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dammitjim.co.uk/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using slices with Go’s pq and SQLx libraries.</title>
-      <link>https://www.dammitjim.co.uk/blog/go-pq-sqlx-slices/</link>
+      <link>https://dammitjim.co.uk/blog/go-pq-sqlx-slices/</link>
       <pubDate>Mon, 04 Apr 2016 16:57:51 +0100</pubDate>
       
-      <guid>https://www.dammitjim.co.uk/blog/go-pq-sqlx-slices/</guid>
+      <guid>https://dammitjim.co.uk/blog/go-pq-sqlx-slices/</guid>
       <description>&lt;p&gt;I ran into an interesting problem today when developing a data retrieval service for work.&lt;/p&gt;</description>
     </item>
     
